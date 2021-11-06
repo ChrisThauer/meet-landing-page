@@ -20,12 +20,15 @@
     font-family: 'Red Hat Display', sans-serif;
 }
 
-body {
+html, body {
     background: var(--white);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 h1 {
     font-size: 64px;
+    line-height: 64px;
     font-weight: 700;
     color: var(--primary-text-color);
 }
@@ -55,6 +58,7 @@ p {
     color: var(--white);
     padding: 16px 40px;
     border-radius: 30px;
+    transition: 0.2s;
 }
 
 .btn span {
@@ -66,8 +70,16 @@ p {
     background: var(--primary-color);
 }
 
+.btn-primary:hover {
+    background: var(--primary-highlight);
+}
+
 .btn-secondary {
     background: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-highlight);
 }
 
 /* HEADER */
@@ -80,7 +92,7 @@ header {
 
 /* Call to Action */
 .cta {
-    height: 358px;
+    height: 300px;
     display: flex;
     justify-content: space-between;
     margin: 60px -30px;
@@ -91,8 +103,16 @@ header {
     height: 80%;
 }
 
+.cta img:last-of-type {
+    align-self: flex-end;
+}
+
 .cta div {
-    padding: 0 88px;
+    padding: 20px 88px;
+}
+
+.cta div p {
+    margin-top: 34px;
 }
 
 .cta div .cta-button-bar {
@@ -101,6 +121,10 @@ header {
 
 .cta div .cta-button-bar a {
     margin-right: 15px;
+}
+
+.cta .mobile-hero {
+    display: none;
 }
 
 /* MAIN */
@@ -177,4 +201,74 @@ footer p {
 
 footer a {
     z-index: 10;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    .cta .desktop-hero {
+        display: none;
+    }
+
+    .cta .mobile-hero {
+        display: block;
+    }
+
+    .cta {
+        flex-direction: column;
+        margin: 60px -10px;
+        height: 372px;
+    }
+
+    .cta img {
+        height: 303px;
+        width: 820px;
+    }
+
+    .cta div {
+        padding-top: 72px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cta div p {
+        width: 500px;
+    }
+
+    .cta div .cta-button-bar {
+        padding: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .main .photo-bar {
+        width: 689px;
+        margin-top: 287px;
+    }
+
+    .main .photo-bar img {
+        width: 164px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        height: 426px;
+    }
+
+    footer h2 {
+        padding-top: 92px;
+    }
+
+    footer p {
+        padding-top: 32px;
+        width: 550px;
+    }
+
+    footer a {
+        margin-top: 32px;
+        margin-bottom: 50px;
+    }
 }
